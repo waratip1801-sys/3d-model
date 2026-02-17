@@ -39,7 +39,21 @@ if(id < 1 || id > 9){
 }
 
 document.getElementById("viewer").src = "model" + id + ".glb";
+
+</script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id") || "1";
+
+document.getElementById("viewer").src = "model" + id + ".glb";
+
+document.body.style.background =
+  "url(bg" + id + ".jpg) no-repeat center center fixed";
+document.body.style.backgroundSize = "cover";
 </script>
 
 </body>
 </html>
+
+
