@@ -24,36 +24,17 @@ height:100vh;
 id="viewer"
 auto-rotate
 camera-controls
-environment-image="spruit_sunrise_1k_HDR.hdr"
-exposure="1"
+environment-image="neutral"
+exposure="1.2"
 shadow-intensity="1">
 </model-viewer>
-
-<script>
-const params = new URLSearchParams(window.location.search);
-let id = params.get("id") || "1";
-
-// กันค่าเกิน เช่น id=999
-if(id < 1 || id > 9){
-  id = 1;
-}
-
-document.getElementById("viewer").src = "model" + id + ".glb";
-
-</script>
 
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id") || "1";
 
 document.getElementById("viewer").src = "model" + id + ".glb";
-
-document.body.style.background =
-  "url(bg" + id + ".jpg) no-repeat center center fixed";
-document.body.style.backgroundSize = "cover";
 </script>
 
 </body>
 </html>
-
-
